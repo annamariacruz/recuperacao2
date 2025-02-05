@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário Roblox</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      text-align: center;
+      color: #000000;
+      margin-top: 30px;
+    }
+
+    form {
+      max-width: 600px;
+      margin: 30px auto;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      font-size: 16px;
+      margin-bottom: 8px;
+      color: #333;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="date"],
+    input[type="password"],
+    input[type="number"],
+    input[type="range"],
+    select,
+    input[type="file"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+      margin-right: 10px;
+    }
+
+    input[type="submit"],
+    input[type="reset"] {
+      background-color: #ff0000;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-right: 10px;
+    }
+
+    input[type="submit"]:hover,
+    input[type="reset"]:hover {
+      background-color: #cc0000;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .radio-group,
+    .checkbox-group {
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Formulário Roblox</h1>
+
+<form onsubmit="return validarFormulario(event)">
+  <div>
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome" required>
+  </div>
+
+  <div>
+    <label for="nickname">Nickname:</label>
+    <input type="text" id="nickname" name="nickname" required>
+  </div>
+
+  <div>
+    <label for="birthday">Data de Nascimento:</label>
+    <input type="date" id="birthday" name="birthday" required>
+  </div>
+
+  <div>
+    <label for="email">E-mail:</label>
+    <input type="email" id="email" name="email" required>
+  </div>
+
+  <div>
+    <label for="senha">Senha:</label>
+    <input type="password" id="senha" name="senha" minlength="8" required>
+  </div>
+
+  <div>
+    <label for="confirmasenha">Confirme a Senha:</label>
+    <input type="password" id="confirmasenha" name="confirmasenha" minlength="8" required>
+  </div>
+
+  <div>
+    <p>Em que ano o Roblox foi criado?</p>
+    <div class="radio-group">
+      <input type="radio" id="ano2000" name="roblox_ano" value="2000">
+      <label for="ano2000">2000</label>
+    </div>
+
+    <div>
+      <input type="radio" id="ano2006" name="roblox_ano" value="2006">
+      <label for="ano2006">2006</label>
+    </div>
+
+    <div>
+      <input type="radio" id="ano2010" name="roblox_ano" value="2010">
+      <label for="ano2010">2010</label>
+    </div>
+
+    <br>
+    <div>
+      <label for="classificacao">Classificação indicativa do Roblox:</label>
+      <input
+        type="number" 
+        id="classificacao" 
+        name="classificacao" 
+        min="10" 
+        max="10" 
+        required
+        title="A classificação correta é 10"
+      >
+      <small class="hint">Dica: O Roblox é classificado para maiores de 10 anos</small>
+    </div>
+
+  <br>
+  <div>
+    <p>Subgêneros favoritos:</p>
+    <div class="checkbox-group">
+      <input type="checkbox" id="subgenero1" name="subgenero[]" value="ação">
+      <label for="subgenero1">Ação</label>
+    </div>
+
+    <div>
+      <input type="checkbox" id="subgenero2" name="subgenero[]" value="aventura">
+      <label for="subgenero2">Aventura</label>
+    </div>
+
+    <div>
+      <input type="checkbox" id="subgenero3" name="subgenero[]" value="simulação">
+      <label for="subgenero3">Simulação de vida</label>
+    </div>
+  </div>
+  <br>
+  <div>
+    <label for="minigames">Jogo Favorito:</label>
+    <select name="minigames" id="minigames" required>
+      <option value="">Selecione...</option>
+      <option value="dti">Dress to impress</option>
+      <option value="mm2">Murder Mystery 2</option>
+      <option value="ftf">Flee the facility</option>
+      <option value="bf">Blox Fruits</option>
+      <option value="piggy">Piggy</option>
+    </select>
+  </div>
+  <br> 
+  <div>
+    <label for="vol">Nível de interesse no Roblox:</label>
+    <input type="range" id="vol" name="interesse" min="0" max="100" value="50">
+  </div>
+  <br>
+  <div>
+    <label for="myfile">Foto do jogo favorito:</label>
+    <input type="file" id="myfile" name="myfile" accept="image/*">
+  </div>
+
+  <div>
+    <input type="submit" value="Enviar">
+    <input type="reset" value="Limpar">
+  </div>
+</form>
+
+<script src="formulario.js"></script>
+
+</body>
+</html>
